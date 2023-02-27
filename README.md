@@ -5,10 +5,13 @@ Using DNS blacklists with Windows Server DNS isn't straightforward, and all the 
 
 This is a work in progress so it's not perfect, but it is in a basic working state. 
 
+## Requirements
+If executing the script remotely, you need to have the DnsServer Powershell module installed.
+
 ## Usage
 The blacklist file should be formatted as a comma-separated list of domains, preferably one per line. If the list you want to use isn't already comma-separated, this can be easily achieved with a Notepad++ function or a similar text editor. 
 
-Once your blacklist is ready, edit the variables at the top of the script for the server hostname + input filename + policy name, then run it in a Powershell prompt as a user with DNS Admin role. 
+Once your blacklist is ready, edit the variables at the top of the script for the server hostname + input filename + policy name, then run it in a Powershell prompt as Admin or a user with DNS Admin role. 
 
 Each time you execute it will replace the previous query resolution policy, so you don't end up with a mess of different policies. 
 
